@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohan Raut | Senior QA Engineer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--accent:#00bfff;
+--bg:#121212;
+--card-bg:rgba(255,255,255,0.04);
+--glass:rgba(255,255,255,0.05);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+/* Section heading styling */
+
+.section-title{
+font-size:34px;
+margin-bottom:10px;
+letter-spacing:-0.5px;
+}
+
+.section-sub{
+color:#888;
+margin-bottom:30px;
+}
+
+section{
+scroll-margin-top:80px;
+padding:100px 0;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 0;
+background:rgba(18,18,18,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-size:14px;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:radial-gradient(circle at top,#1c1c1c,#121212);
+}
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.08);
+padding:60px;
+border-radius:24px;
+max-width:900px;
+box-shadow:0 8px 32px rgba(0,191,255,0.15);
+}
+
+.hero h1{
+font-size:clamp(32px,5vw,60px);
+margin-bottom:10px;
+}
+
+.highlight{
+color:var(--accent);
+}
+
+.typing{
+color:var(--accent);
+font-weight:500;
+font-size:1.2rem;
+height:24px;
+margin-bottom:25px;
+}
+
+.buttons a{
+text-decoration:none;
+padding:14px 30px;
+border-radius:30px;
+margin:10px;
+display:inline-block;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--accent);
+color:black;
+}
+
+.btn-outline{
+border:1px solid var(--accent);
+color:var(--accent);
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 0 20px rgba(0,191,255,.4);
+}
+
+.btn-outline:hover{
+background:rgba(0,191,255,.1);
+}
+
+/* Scroll indicator */
+
+.scroll-down{
+margin-top:40px;
+font-size:14px;
+color:#777;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(6px)}
+}
+
+/* STACK */
+
+.stack-grid{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:30px;
+}
+
+.tag{
+background:#1e1e1e;
+border:1px solid #333;
+padding:8px 20px;
+border-radius:25px;
+font-size:14px;
+transition:.3s;
+}
+
+.tag:hover{
+background:var(--accent);
+color:black;
+transform:scale(1.05);
+}
+
+/* PROJECT CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:var(--card-bg);
+border:1px solid rgba(255,255,255,.08);
+padding:35px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--accent);
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.card h3{
+color:var(--accent);
+margin-bottom:15px;
+}
+
+/* METRICS */
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.metric{
+background:#181818;
+padding:40px 20px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.metric:hover{
+border:1px solid var(--accent);
+}
+
+.metric h2{
+font-size:42px;
+color:var(--accent);
+}
+
+/* PROCESS */
+
+.process{
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+background:var(--glass);
+padding:50px 20px;
+border-radius:24px;
+margin-top:30px;
+}
+
+.step{
+text-align:center;
+padding:20px;
+min-width:160px;
+}
+
+.step span{
+font-size:36px;
+display:block;
+margin-bottom:15px;
+}
+
+/* TIMELINE */
+
+.timeline{
+border-left:2px solid var(--accent);
+padding-left:35px;
+margin-top:40px;
+}
+
+.timeline-item{
+position:relative;
+margin-bottom:50px;
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-42px;
+top:5px;
+width:14px;
+height:14px;
+background:var(--accent);
+border-radius:50%;
+}
+
+/* FOOTER */
+
+footer{
+background:#0e0e0e;
+text-align:center;
+padding:80px 0;
+border-top:1px solid #222;
+}
+
+/* CURSOR */
+
+.cursor{
+width:12px;
+height:12px;
+background:var(--accent);
+position:fixed;
+border-radius:50%;
+pointer-events:none;
+z-index:9999;
+box-shadow:0 0 15px var(--accent);
+mix-blend-mode:difference;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:38px}
+.cursor{display:none}
+.nav-links{display:none}
+.glass{padding:40px 20px}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+<div class="container">
+<div class="logo"><strong>Mohan</strong><span class="highlight">Raut</span></div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#experience">Tech</a>
+<a href="#projects">Projects</a>
+<a href="#process">Process</a>
+<a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank">LinkedIn</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="glass">
+
+<h1>Mohan Tanaji Raut</h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Quality Assurance Engineer with 3+ years of experience across <span class="highlight">FinTech, eCommerce</span> and enterprise platforms. Currently optimizing product quality at <span class="highlight">TransPerfect</span>.
+</p>
+
+<br>
+
+<h3 class="highlight">Turning potential product risks into quality-driven releases.</h3>
+
+<div class="buttons">
+
+<a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank" class="btn-primary">LinkedIn Profile</a>
+
+<a href="https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/portfolio-assets/main/Mohan_Raut_Resume.pdf"
+target="_blank"
+class="btn-outline">
+Download Resume
+</a>
+
+</div>
+
+<div class="scroll-down">↓ Scroll</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<p class="section-sub">QA engineer focused on reliability and scalable software quality.</p>
+
+<p style="max-width:800px;color:#aaa;">
+I specialize in building testing strategies that prevent production failures before they occur.
+With experience across FinTech, eCommerce, and enterprise systems, I combine automation,
+API validation, and performance testing to ensure reliable software at scale.
+</p>
+
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+
+<h2 class="section-title">Expertise Ecosystem</h2>
+<p class="section-sub">Tools and practices I use to deliver reliable software.</p>
+
+<div class="stack-grid">
+<span class="tag">Selenium + Page Object Model</span>
+<span class="tag">Python Automation</span>
+<span class="tag">Playwright</span>
+<span class="tag">Postman API Testing</span>
+<span class="tag">JMeter Performance Testing</span>
+<span class="tag">SQL Database Validation</span>
+<span class="tag">Agile / Scrum</span>
+<span class="tag">CI/CD Pipeline Testing</span>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+
+<h2 class="section-title">Strategic Impact & Projects</h2>
+<p class="section-sub">Real systems I helped validate and improve.</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏦 RXIL TReDS Platform</h3>
+<p>Validated complex financial lifecycles for Factoring Units ensuring accurate data exchange between buyers, suppliers and financiers.</p>
+</div>
+
+<div class="card">
+<h3>📱 RXIL Mobile Application</h3>
+<p>Sole QA responsible for validating financial workflows for buyers, suppliers and financiers across mobile platforms.</p>
+</div>
+
+<div class="card">
+<h3>🛒 FirstCry eCommerce Scaling</h3>
+<p>Performed end-to-end testing of high-traffic product browsing and checkout workflows.</p>
+</div>
+
+<div class="card">
+<h3>💳 Checkout & Payment Integrity</h3>
+<p>Deep validation of cart logic and payment gateway integrations ensuring seamless purchase flows.</p>
+</div>
+
+<div class="card">
+<h3>⚙ Automation Framework</h3>
+<p>Designed scalable Selenium-Python test automation frameworks to accelerate regression cycles.</p>
+</div>
+
+<div class="card">
+<h3>🔗 API & Backend Validation</h3>
+<p>Validated REST APIs using Postman and SQL queries ensuring backend data consistency.</p>
+</div>
+
+<div class="card">
+<h3>🚀 Performance Benchmarking</h3>
+<p>Used Apache JMeter to identify system bottlenecks under concurrent load conditions.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="process">
+<div class="container">
+
+<h2 class="section-title" style="text-align:center">Testing Philosophy</h2>
+
+<div class="process">
+
+<div class="step"><span>🔍</span><strong>Discovery</strong></div>
+<div class="step"><span>🧠</span><strong>Isolation</strong></div>
+<div class="step"><span>📝</span><strong>Reporting</strong></div>
+<div class="step"><span>🔁</span><strong>Verification</strong></div>
+<div class="step"><span>🚀</span><strong>Release</strong></div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Measurable Outcomes</h2>
+
+<div class="metrics">
+
+<div class="metric">
+<h2>80%</h2>
+<p>Manual Regression Reduction</p>
+</div>
+
+<div class="metric">
+<h2>10x</h2>
+<p>Faster Release Velocity</p>
+</div>
+
+<div class="metric">
+<h2>Shift-Left</h2>
+<p>Early Risk Mitigation</p>
+</div>
+
+<div class="metric">
+<h2>API-First</h2>
+<p>Backend Stability</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Career Progression</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>2025 – Present</h3>
+<p><strong>QA Engineer</strong> — TransPerfect</p>
+</div>
+
+<div class="timeline-item">
+<h3 class="highlight">2024 – 2025</h3>
+<p><strong> QA Engineer</strong> — RXIL</p>
+</div>
+
+<div class="timeline-item">
+<h3>2021 – 2024</h3>
+<p><strong>QA Engineer I</strong> — FirstCry</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+
+<div style="font-size:22px;font-style:italic;margin-bottom:40px;color:#aaa;">
+"Tools are temporary. Testing judgment is permanent."
+</div>
+
+<h3>Mohan Tanaji Raut</h3>
+<p>Quality Assurance Engineer | Automation | API | Performance Testing</p>
+
+<p>
+<a href="mailto:your_email@gmail.com" style="color:var(--accent)">Email</a> |
+<a href="https://www.linkedin.com/in/mohanraut033/" target="_blank" style="color:var(--accent)">LinkedIn</a>
+</p>
+<br>
+
+<p style="font-size:12px;color:#555;">© 2026 Mohan Raut</p>
+
+</div>
+</footer>
+
+<script>
+
+const text="QA Engineer | Automation Specialist | API & Performance Testing";
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,50);
+}
+}
+
+window.onload=typeWriter;
+
+if(window.innerWidth>768){
+const cursor=document.getElementById("cursor");
+let mouseX=0,mouseY=0,cursorX=0,cursorY=0;
+
+document.addEventListener("mousemove",(e)=>{
+mouseX=e.clientX;
+mouseY=e.clientY;
+});
+
+function animateCursor(){
+cursorX+=(mouseX-cursorX)*0.15;
+cursorY+=(mouseY-cursorY)*0.15;
+cursor.style.left=cursorX+"px";
+cursor.style.top=cursorY+"px";
+requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+}
+
+</script>
+
+</body>
+</html>
