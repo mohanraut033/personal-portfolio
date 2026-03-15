@@ -82,6 +82,17 @@ align-items:center;
     font-size: 1.2rem;
 }
 
+/* Logo Link Styles */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.logo a:hover {
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
 .nav-links a{
 color:white;
 text-decoration:none;
@@ -129,7 +140,8 @@ color:var(--accent);
 color:var(--accent);
 font-weight:500;
 font-size:1.2rem;
-height:24px;
+min-height:24px; /* Fixed for mobile */
+line-height: 1.4; /* Fixed for mobile */
 margin-bottom:25px;
 }
 
@@ -363,20 +375,21 @@ mix-blend-mode:difference;
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <div class="cursor" id="cursor"></div>
 
 <nav>
 <div class="container">
-<div class="logo"><strong>Mohan</strong><span class="highlight">Raut</span></div>
+<div class="logo"><a href="#top"><strong>Mohan</strong><span class="highlight">Raut</span></a></div>
 <div class="nav-links">
 <a href="#about">About</a>
 <a href="#experience">Tech</a>
 <a href="#projects">Projects</a>
 <a href="#certifications">Certifications</a>
 <a href="#process">Process</a>
-<a href="#strategy">Strategy</a> <a href="https://www.linkedin.com/in/mohanraut033/" target="_blank">LinkedIn</a>
+<a href="#strategy">Strategy</a> 
+<a href="https://www.linkedin.com/in/mohanraut033/" target="_blank">LinkedIn</a>
 </div>
 </div>
 </nav>
@@ -387,8 +400,7 @@ mix-blend-mode:difference;
 <h1>Mohan Tanaji Raut</h1>
 
 <div class="typing" id="typing"></div>
-
-<p>
+<br> <p>
 Quality Assurance Engineer with <span class="highlight">3.5+ years</span> of experience across <span class="highlight">FinTech, eCommerce</span> and enterprise platforms. Currently optimizing product quality at <span class="highlight">TransPerfect</span>.
 </p>
 
